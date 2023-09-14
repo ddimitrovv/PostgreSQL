@@ -1,8 +1,8 @@
 CREATE OR REPLACE VIEW view_company_chart AS
 SELECT
-    CONCAT(first_name, ' ', last_name) AS "Full Name",
-    job_title AS "Job Title"
+    "Full Name",
+    "Job Title"
 FROM
-    employees
+    company_chart
 WHERE
-    manager_id = 184;
+    "Manage ID" = 184;
