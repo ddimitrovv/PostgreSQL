@@ -15,7 +15,7 @@ CREATE TABLE study_halls (
 	id SERIAL PRIMARY KEY,
 	study_hall_name VARCHAR(100),
 	exam_id INT,
-	CONSTRAINT fk_students_halls_exams
+	CONSTRAINT fk_study_halls_exams
 		FOREIGN KEY (exam_id)
 		REFERENCES exams (id)
 );
@@ -23,6 +23,8 @@ CREATE TABLE study_halls (
 CREATE TABLE students_exams (
     student_id INT,
     exam_id INT,
+    CONSTRAINT pk_students_exams
+        PRIMARY KEY (student_id, exam_id)
     CONSTRAINT fk_students_exams_students
         FOREIGN KEY (student_id)
         REFERENCES students (id),
