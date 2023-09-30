@@ -5,8 +5,7 @@ FROM
     apartments AS a
 LEFT JOIN
     bookings AS b
-ON
-    a.apartment_id = b.apartment_id
+USING (apartment_id)
 WHERE
     b.booked_at >= '2021-05-18 07:52:09.904+03' AND
     b.booked_at < '2021-09-17 19:48:02.147+03'
