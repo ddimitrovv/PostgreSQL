@@ -20,7 +20,7 @@ BEGIN
 
         COMMIT;
     ELSE
-        RAISE NOTICE 'Insufficient balance for withdrawal.';
+        RAISE NOTICE 'Insufficient balance for withdrawal %', money_amount;
     END IF;
 END;
 $$;
