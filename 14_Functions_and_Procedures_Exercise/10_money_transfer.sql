@@ -6,8 +6,6 @@ CREATE OR REPLACE PROCEDURE sp_transfer_money(
 LANGUAGE plpgsql
 AS 
 $$
-DECLARE
-    success BOOLEAN := false;
 BEGIN
     CALL sp_withdraw_money(sender_id, amount);
 	UPDATE accounts
